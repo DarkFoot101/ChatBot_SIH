@@ -24,8 +24,8 @@ st.header("Uni-Verse MasterChat")
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
 
-input=st.text_input("Input: ",key="input")
-submit=st.button("Ask the question")
+input=st.text_input("Hi!, I am Uni-Verse MasterChat. Ask Me Anything about Engineering!",key="input")
+submit=st.button("Ask You're Question!")
 
 if submit and input:
     response=get_gemini_response(input)
@@ -34,7 +34,7 @@ if submit and input:
     st.subheader("You're Answer:- ")
     for chunk in response:
         st.write(chunk.text)
-        st.session_state['chat_history'].append(("Bot", chunk.text))
+        st.session_state['chat_history'].append(("Uni-Verse MasterChat", chunk.text))
 st.subheader("Chat History")
     
 for role, text in st.session_state['chat_history']:
